@@ -1,10 +1,8 @@
 package co.generation.clinica;
 
-// Importar el servicio que tiene toda la logica del negocio
+
 import co.generation.clinica.service.ClinicaService;
-// Importar la clase que maneja los archivos CSV (guardar y cargar datos)
 import co.generation.clinica.datos.DatosCSV;
-// Importar los modelos (las clases que representan los datos)
 import co.generation.clinica.model.Paciente;
 import co.generation.clinica.model.Medico;
 import co.generation.clinica.model.Turno;
@@ -20,7 +18,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Crear el servicio que controla todo el sistema
+        // Crear el servicio que controla el sistema
         ClinicaService servicio = new ClinicaService();
         // Cargar los datos guardados anteriormente (si existen)
         DatosCSV.cargar(servicio);
