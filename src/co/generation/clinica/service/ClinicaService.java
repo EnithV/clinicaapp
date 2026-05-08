@@ -199,6 +199,26 @@ public class ClinicaService implements Consultable {
         // Imprime confirmación
         System.out.println("Turno cancelado con éxito.");
     }
+    // 8. Cambiar estado de turno
+    public void cambiarEstadoTurno(int idTurno, EstadoTurno nuevo) {
+        // Busca el turno por id
+        Turno turnoEncontrado = null;
+        for (Turno t : turnos) {
+            if (t.getId() == idTurno) {
+                turnoEncontrado = t;
+                break;
+            }
+        }
+        // Si no existe: imprime "Turno no encontrado."
+        if (turnoEncontrado == null) {
+            System.out.println("Turno no encontrado.");
+            return;
+        }
+        // Si existe: cambia el estado con setEstado()
+        turnoEncontrado.setEstado(nuevo);
+        // Imprime confirmación con el nuevo estado
+        System.out.println("Estado del turno actualizado a: " + nuevo);
+    }
 
     @Override
     public List<Turno> listarTurnosDelDia(LocalDate fecha) {
